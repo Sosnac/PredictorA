@@ -93,7 +93,7 @@
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Sosnac/PredictorA.git
-cd PredictorA
+cd PredictorA-
 ```
 
 ### 2. Backend Setup
