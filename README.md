@@ -221,5 +221,5 @@ This project is licensed under the **Apache License 2.0** — see the [LICENSE](
   Made with ❤️ by David Sosnac- Lead Developer and the PredictorA community
 </div>
 
-All rights reserved, copyright ©2026
----
+All rights reserved, copyright ©2026 David Sosnac 
+
