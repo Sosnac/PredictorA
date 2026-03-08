@@ -1,0 +1,120 @@
+# PredictorA — Certificate & Licensing Report
+
+## 🏆 Recommended License: Apache License 2.0
+
+### Why Apache 2.0 is the Best Fit for PredictorA
+
+| Criteria | Apache 2.0 | MIT | GPL v3 | AGPL v3 |
+|----------|-----------|-----|--------|---------|
+| Open source | ✅ | ✅ | ✅ | ✅ |
+| Commercial use allowed | ✅ | ✅ | ✅ | ✅ |
+| Play Store distribution | ✅ | ✅ | ⚠️ | ❌ |
+| Patent protection | ✅ | ❌ | ✅ | ✅ |
+| Contributor protection | ✅ | ❌ | ✅ | ✅ |
+| Permissive (no copyleft) | ✅ | ✅ | ❌ | ❌ |
+| Used by Android ecosystem | ✅ | — | — | — |
+
+### Key Reasons Apache 2.0 Wins
+
+1. **Google Play Store Compatible**  
+   Apache 2.0 is explicitly approved by Google for apps distributed on the Play Store.  
+   GPL v3 and AGPL v3 have compatibility issues with Play Store distribution terms.
+
+2. **Patent Protection for Contributors**  
+   Apache 2.0 includes an express patent grant — contributors grant users a patent  
+   license to their contributions. This protects both you and contributors from  
+   patent trolls. MIT does not have this protection.
+
+3. **Industry Standard for Android**  
+   AOSP (Android Open Source Project) itself uses Apache 2.0. Most major  
+   Android libraries (Retrofit, OkHttp, Hilt, Compose) are Apache 2.0.  
+   Using the same license ensures clean compatibility.
+
+4. **Commercial Fork Friendly**  
+   Others can build commercial products on top of PredictorA without being  
+   forced to open source their additions (unlike GPL). This encourages adoption  
+   and contribution from companies.
+
+5. **Attribution Required**  
+   Users must retain copyright notices and the license, giving your project  
+   and contributors proper credit.
+
+---
+
+## 📋 How to Apply Apache 2.0 to PredictorA
+
+### 1. Root LICENSE file ✅
+Already created at `LICENSE` in the project root.
+
+### 2. Source File Headers
+Add this header to every source file:
+
+```kotlin
+// Copyright 2026 David Sosnac -Lead Developer and PredictorA Contributors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+```
+
+### 3. NOTICE File
+Create a `NOTICE` file at the project root listing third-party dependencies  
+and their licenses (Retrofit, OkHttp, Firebase, etc.).
+
+### 4. GitHub Repository Settings
+- Set license to "Apache-2.0" in repository settings
+- This displays the license badge on your GitHub page
+- Enables license scanning tools like FOSSA and Snyk
+
+---
+
+## 🔐 Android Signing Certificate (Play Store)
+
+For Play Store distribution, you need a separate **Android signing keystore**.  
+This is different from the open source software license.
+
+### Generate Release Keystore
+```bash
+keytool -genkey -v \
+  -keystore predictora-release.jks \
+  -alias predictora \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000
+```
+
+### Important Keystore Rules
+- ⚠️  **NEVER commit the .jks file to Git** — it's in .gitignore
+- ⚠️  **Back up your keystore securely** — losing it means you cannot update your app
+- Store it in a password manager or secure vault (e.g. AWS Secrets Manager)
+- Use GitHub Actions secrets for CI/CD signing (see `.github/workflows/ci.yml`)
+
+### Play App Signing (Recommended)
+Enroll in **Google Play App Signing** — Google holds your release key in their  
+secure infrastructure. You only manage the upload key, reducing the risk of  
+losing your signing key.
+
+---
+
+## 📜 Summary
+
+| Item | Choice | Status |
+|------|--------|--------|
+| Open Source License | Apache 2.0 | ✅ Applied |
+| GitHub License Badge | Apache 2.0 | ✅ In README |
+| Android Signing Key | RSA 2048 / Play App Signing | 📋 Action needed |
+| Play Store Listing | See `docs/play-store-listing.md` | 📋 Action needed |
+| NOTICE file | Third-party attributions | 📋 Action needed |
+
+---
+
+*Report prepared for PredictorA open source project*  
+*Last updated: 2024*
