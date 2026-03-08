@@ -1,3 +1,146 @@
+# ============================================================
+#  PredictorA — .gitignore
+# ============================================================
+
+# ── Android ──────────────────────────────────────────────────
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+android/app/release/
+android/keystore/
+google-services.json
+android/app/google-services.json
+
+# ── Kotlin ───────────────────────────────────────────────────
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# ── Node.js Backend ──────────────────────────────────────────
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.env.local
+backend/.env.production
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/.pnp/
+backend/.pnp.js
+backend/coverage/
+backend/.nyc_output/
+
+# ── Python ML Service ────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+*.egg
+*.egg-info/
+dist/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+ml_service/.env
+ml_service/models/*.pkl
+ml_service/models/*.joblib
+
+# ── Docker ───────────────────────────────────────────────────
+docker-compose.override.yml
+.docker/
+
+# ── Environment & Secrets ────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+serviceAccountKey.json
+firebase-adminsdk*.json
+
+# ── Database ─────────────────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+prisma/migrations/dev/
+
+# ── IDE & Editors ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+
+# ── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Testing & Coverage ───────────────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+test-results/
+androidTest-results/
+
+# ── Build & Release ──────────────────────────────────────────
+release/
+output/
+*.aab
+*.apk
+!docs/screenshots/*.png
+
+# ── Gradle ───────────────────────────────────────────────────
+.gradle
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+.gradletasknamecache
+
+# ── ProGuard ─────────────────────────────────────────────────
+proguard/
+
+# ── Lint ─────────────────────────────────────────────────────
+lint-results*.xml
+lint-results*.html
+
+# ── Misc ─────────────────────────────────────────────────────
+*.orig
+*.bak
+tmp/
+temp/
+
 # Build and Release Folders
 bin-debug/
 bin-release/
