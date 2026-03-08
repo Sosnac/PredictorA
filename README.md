@@ -218,5 +218,8 @@ This project is licensed under the **Apache License 2.0** — see the [LICENSE](
 
 <div align="center">
   <strong>⭐ Star this repo if you find it useful!</strong><br/>
-  Made with ❤️ by David Sosnac- Lead Developer and the PredictorA community
+  Made with ❤️ by **David Sosnac**- **Lead Developer** and the PredictorA community
 </div>
+---
+All rights reserved, copyright ©2026
+---
