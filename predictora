@@ -1,0 +1,3 @@
+mkdir -p /home/claude/PredictorA/{android/app/src/main/{java/com/predictora/{auth,data/{api,models,repository},ui/{login,register,home,predictions,analysis,profile},utils,di},res/{layout,drawable,values,mipmap-hdpi,mipmap-xhdpi,mipmap-xxhdpi,mipmap-xxxhdpi,raw,font},assets},backend/{src/{api,models,services,middleware,utils,config},tests},docs,scripts,.github/{workflows,ISSUE_TEMPLATE}}
+echo "✅ Directory structure created"
+find /home/claude/PredictorA -type d | head -60
