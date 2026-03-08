@@ -92,7 +92,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/PredictorA.git
+git clone https://github.com/Sosnac/PredictorA.git
 cd PredictorA
 ```
 
