@@ -1,4 +1,6 @@
-# PredictorA 🚀
+![PredictorA🚀](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=PredictorA🚀&fontSize=70&fontAlignY=40&desc=Your%AI-Powered%20Assistance&descAlignY=60&descAlign=50)
+
+**Author**: David Sosnac 
 
 Welcome to **PredictorA**, a full-stack application featuring a powerful Node.js backend and a sleek modern Android frontend.
 **PredictorA** is a software that delivers real-time football (soccer) predictions, live match analysis, and deep statistical insights powered by machine learning. Built with modern Android architecture (Jetpack Compose + MVVM + Clean Architecture) and a Node.js/FastAPI backend, **PredictorA** is designed for football fans, data scientists, and developers alike.
