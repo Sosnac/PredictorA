@@ -67,7 +67,7 @@ npm run dev                 # Start the development server
 Android Setup
 ```bash
 cd android
-cp local.properties.com/predictora/app local.properties # Create local properties
+cp local.properties  # Create local properties
 ```
 
 • Open the android/ folder in Android Studio.
