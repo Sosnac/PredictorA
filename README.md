@@ -1,4 +1,4 @@
-![PredictorA🚀](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=PredictorA🚀&fontSize=70&fontAlignY=40&desc=Your%AI-Powered%20Assistance&descAlignY=60&descAlign=50)
+![PredictorA🚀](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=PredictorA🚀&fontSize=70&fontAlignY=40&desc=Your%AI%Powered%20Assistance&descAlignY=60&descAlign=50)
 
 **Author**: David Sosnac 
 
