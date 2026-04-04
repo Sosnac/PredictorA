@@ -57,7 +57,7 @@ If you prefer to set up the environments manually, follow these steps instead of
 Backend Setup
 ```bash
 cd backend
-cp .env.example .env        # Fill in your environment variables if needed
+cp backend.env       # Fill in your environment variables if needed
 npm install                 # Install dependencies
 docker-compose up -d        # Start PostgreSQL container
 npm run migrate             # Run database migrations
@@ -67,7 +67,7 @@ npm run dev                 # Start the development server
 Android Setup
 ```bash
 cd android
-cp local.properties.example local.properties # Create local properties
+cp local.properties.com/predictora/app local.properties # Create local properties
 ```
 
 • Open the android/ folder in Android Studio.
