@@ -25,7 +25,7 @@ The easiest way to get the project up and running is to use our automated launch
 
 **1. Clone the Repository**
 ```bash
-git clone [https://github.com/Sosnac/PredictorA.git](https://github.com/Sosnac/PredictorA.git)
+git clone https://github.com/Sosnac/PredictorA.git
 cd PredictorA
 ```
 **2.Run the Launcher Script**
@@ -42,6 +42,7 @@ chmod +x launcher.sh
 • Select File > Open and choose the android/ folder inside the cloned repository.
 
 • Allow Gradle to sync completely.
+
 • Click the Run button to launch the app on your emulator or physical device.
 
 ## ⚙️ Manual Setup
