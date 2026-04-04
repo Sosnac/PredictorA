@@ -29,6 +29,7 @@ git clone [https://github.com/Sosnac/PredictorA.git](https://github.com/Sosnac/P
 cd PredictorA
 ```
 **2.Run the Launcher Script**
+
 Make the script executable and run it:
 ```bash
 chmod +x launcher.sh
@@ -57,9 +58,12 @@ cd android
 cp local.properties.example local.properties # Create local properties
 ```
 • Open the android/ folder in Android Studio.
+
 • Sync Gradle.
+
 • Run on your device/emulator.
-🤝 Contributing
+
+**🤝 Contributing**
 Please read the Contributing.md file for details on our code of conduct and the process for submitting pull requests to us.
-📄 License
+**📄 License**
 This project is licensed under the terms found in the LICENSE file. See the Certificate and Licensing report for additional details.
