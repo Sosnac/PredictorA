@@ -1,6 +1,9 @@
 # PredictorA 🚀
 
 Welcome to **PredictorA**, a full-stack application featuring a powerful Node.js backend and a sleek modern Android frontend.
+**PredictorA** is a software that delivers real-time football (soccer) predictions, live match analysis, and deep statistical insights powered by machine learning. Built with modern Android architecture (Jetpack Compose + MVVM + Clean Architecture) and a Node.js/FastAPI backend, **PredictorA** is designed for football fans, data scientists, and developers alike.
+
+Currently in active development — contributions are welcome!
 
 ## 📂 Project Structure
 
