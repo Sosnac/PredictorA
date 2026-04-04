@@ -36,13 +36,18 @@ chmod +x launcher.sh
 ./launcher.sh
 ```
 **3. Run the Android App**
+
 • Open Android Studio.
+
 • Select File > Open and choose the android/ folder inside the cloned repository.
+
 • Allow Gradle to sync completely.
 • Click the Run button to launch the app on your emulator or physical device.
 
 ## ⚙️ Manual Setup
+
 If you prefer to set up the environments manually, follow these steps instead of using the Quick Start script.
+
 Backend Setup
 ```bash
 cd backend
@@ -52,11 +57,13 @@ docker-compose up -d        # Start PostgreSQL container
 npm run migrate             # Run database migrations
 npm run dev                 # Start the development server
 ```
+
 Android Setup
 ```bash
 cd android
 cp local.properties.example local.properties # Create local properties
 ```
+
 • Open the android/ folder in Android Studio.
 
 • Sync Gradle.
@@ -64,6 +71,9 @@ cp local.properties.example local.properties # Create local properties
 • Run on your device/emulator.
 
 **🤝 Contributing**
+
 Please read the Contributing.md file for details on our code of conduct and the process for submitting pull requests to us.
+
 **📄 License**
+
 This project is licensed under the terms found in the LICENSE file. See the Certificate and Licensing report for additional details.
