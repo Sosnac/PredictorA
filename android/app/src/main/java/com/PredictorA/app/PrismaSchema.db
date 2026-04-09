@@ -1,0 +1,164 @@
+// PredictorA — Prisma Database Schema
+// https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── User ──────────────────────────────────────────────────
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  email         String    @unique
+  passwordHash  String
+  avatar        String?
+  favouriteTeam String?
+  isBanned      Boolean   @default(false)
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  predictions   SavedPrediction[]
+  notifications UserNotification[]
+
+  @@index([email])
+  @@map("users")
+}
+
+// ── League ───────────────────────────────────────────────
+model League {
+  id      String @id @default(uuid())
+  extId   Int    @unique  // Football-data.org competition ID
+  name    String
+  country String
+  logo    String?
+  season  String
+
+  matches Match[]
+
+  @@map("leagues")
+}
+
+// ── Team ─────────────────────────────────────────────────
+model Team {
+  id        String @id @default(uuid())
+  extId     Int    @unique
+  name      String
+  shortName String
+  crest     String?
+
+  homeMatches Match[] @relation("HomeTeam")
+  awayMatches Match[] @relation("AwayTeam")
+
+  @@map("teams")
+}
+
+// ── Match ────────────────────────────────────────────────
+model Match {
+  id        String      @id @default(uuid())
+  extId     Int         @unique
+  leagueId  String
+  homeTeamId String
+  awayTeamId String
+  status    MatchStatus @default(SCHEDULED)
+  startTime DateTime
+  homeScore Int?
+  awayScore Int?
+  homeHalfTimeScore Int?
+  awayHalfTimeScore Int?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  league    League   @relation(fields: [leagueId], references: [id])
+  homeTeam  Team     @relation("HomeTeam", fields: [homeTeamId], references: [id])
+  awayTeam  Team     @relation("AwayTeam", fields: [awayTeamId], references: [id])
+  prediction Prediction?
+  analysis   MatchAnalysis?
+  savedBy   SavedPrediction[]
+
+  @@index([status])
+  @@index([startTime])
+  @@map("matches")
+}
+
+enum MatchStatus {
+  SCHEDULED
+  LIVE
+  FINISHED
+  POSTPONED
+  CANCELLED
+}
+
+// ── Prediction ───────────────────────────────────────────
+model Prediction {
+  id           String   @id @default(uuid())
+  matchId      String   @unique
+  homeWinProb  Float
+  drawProb     Float
+  awayWinProb  Float
+  confidence   Float
+  tips         String[]
+  modelVersion String   @default("1.0.0")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  match Match @relation(fields: [matchId], references: [id])
+
+  @@map("predictions")
+}
+
+// ── Match Analysis ────────────────────────────────────────
+model MatchAnalysis {
+  id                 String   @id @default(uuid())
+  matchId            String   @unique
+  homeXg             Float    @default(0)
+  awayXg             Float    @default(0)
+  homePossession     Float    @default(50)
+  awayPossession     Float    @default(50)
+  homeShots          Int      @default(0)
+  awayShots          Int      @default(0)
+  homeShotsOnTarget  Int      @default(0)
+  awayShotsOnTarget  Int      @default(0)
+  homePasses         Int      @default(0)
+  awayPasses         Int      @default(0)
+  updatedAt          DateTime @updatedAt
+
+  match Match @relation(fields: [matchId], references: [id])
+
+  @@map("match_analyses")
+}
+
+// ── Saved Prediction ─────────────────────────────────────
+model SavedPrediction {
+  id        String   @id @default(uuid())
+  userId    String
+  matchId   String
+  createdAt DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  match Match @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, matchId])
+  @@map("saved_predictions")
+}
+
+// ── User Notification ─────────────────────────────────────
+model UserNotification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  body      String
+  isRead    Boolean  @default(false)
+  data      Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("user_notifications")
+    }
